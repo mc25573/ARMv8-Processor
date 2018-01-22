@@ -32,9 +32,22 @@ module adder_test;
         .Bin(in2),
         .add_out(out)
         );
+        
 initial begin
-    in1 <= 5;
-    in2 <= 100;
+    in1 <= 4;
+    in2 <= 0;
+        #200;
+    in1 <= 4;
+    in2 <= out;
+        #200;
+    in1 <= 4;
+    in2 <= out;
+        #200;
+    in1 <= 4;
+    in2 <= out;
+        #200;
+    in1 <= 4;
+    in2 <= out;
  
 end
 endmodule
