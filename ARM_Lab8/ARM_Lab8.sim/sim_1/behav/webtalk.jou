@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2017.2.1 (64-bit)
+# SW Build 1957588 on Wed Aug  9 16:32:24 MDT 2017
+# IP Build 1948039 on Wed Aug  9 18:19:28 MDT 2017
+# Start of session at: Mon Jan 22 14:19:49 2018
+# Process ID: 10324
+# Current directory: H:/ELC3338/Team8/CompOrg_Spring2018_S1_Team8/ARM_Lab8/ARM_Lab8.sim/sim_1/behav
+# Command line: wbtcv.exe -mode batch -source H:/ELC3338/Team8/CompOrg_Spring2018_S1_Team8/ARM_Lab8/ARM_Lab8.sim/sim_1/behav/xsim.dir/adder_test_behav/webtalk/xsim_webtalk.tcl -notrace
+# Log file: H:/ELC3338/Team8/CompOrg_Spring2018_S1_Team8/ARM_Lab8/ARM_Lab8.sim/sim_1/behav/webtalk.log
+# Journal file: H:/ELC3338/Team8/CompOrg_Spring2018_S1_Team8/ARM_Lab8/ARM_Lab8.sim/sim_1/behav\webtalk.jou
+#-----------------------------------------------------------
+source H:/ELC3338/Team8/CompOrg_Spring2018_S1_Team8/ARM_Lab8/ARM_Lab8.sim/sim_1/behav/xsim.dir/adder_test_behav/webtalk/xsim_webtalk.tcl -notrace

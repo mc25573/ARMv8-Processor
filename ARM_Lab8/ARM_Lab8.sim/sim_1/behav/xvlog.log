@@ -1,0 +1,6 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "H:/ELC3338/Team8/CompOrg_Spring2018_S1_Team8/code/1_fetch/adder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-2263] Analyzing Verilog file "H:/ELC3338/Team8/CompOrg_Spring2018_S1_Team8/code/1_fetch/adder_test.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module adder_test
+INFO: [VRFC 10-2263] Analyzing Verilog file "H:/ELC3338/Team8/CompOrg_Spring2018_S1_Team8/ARM_Lab8/ARM_Lab8.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl

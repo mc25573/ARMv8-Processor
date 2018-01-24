@@ -1,0 +1,8 @@
+0.6
+2017.2
+Aug  9 2017
+16:49:39
+H:/ELC3338/Team8/CompOrg_Spring2018_S1_Team8/ARM_Lab8/ARM_Lab8.sim/sim_1/behav/glbl.v,1497407496,verilog,,,,glbl,,,,,,,,
+H:/ELC3338/Team8/CompOrg_Spring2018_S1_Team8/code/0_common/definitions.vh,1516219701,verilog,,,,,,,,,,,,
+H:/ELC3338/Team8/CompOrg_Spring2018_S1_Team8/code/1_fetch/adder.v,1516649325,verilog,,,H:/ELC3338/Team8/CompOrg_Spring2018_S1_Team8/code/0_common/definitions.vh,adder,,,../../../../code/0_common,,,,,
+H:/ELC3338/Team8/CompOrg_Spring2018_S1_Team8/code/1_fetch/adder_test.v,1516649325,verilog,,,H:/ELC3338/Team8/CompOrg_Spring2018_S1_Team8/code/0_common/definitions.vh,adder_test,,,../../../../code/0_common,,,,,
