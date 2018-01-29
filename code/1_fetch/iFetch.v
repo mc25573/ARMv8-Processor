@@ -12,23 +12,23 @@ module iFetch#(parameter STEP=`WORD'd4, SIZE=1024)(
     wire [`WORD-1:0] new_pc;
 
     mux#(`WORD) pc_mux(
-    .a_in(branch_target),
-    .b_in(new_pc),
+    .a_in(incremented_pc),
+    .b_in(branch_target),
     .control(pc_src),
-    .mux_out(incremented_pc)
+    .mux_out(new_pc)
     );
     
     register pc_register(
     .clk(clk),
     .reset(reset),
-    .D(),
+    .D(new_pc),
     .Q(cur_pc)
     );
     
     adder incrementer(
     .a_in(cur_pc),
     .b_in(STEP),
-    .add_out(branch_target)
+    .add_out(incremented_pc)
     );
        
     instr_mem#(SIZE) instr_mem(

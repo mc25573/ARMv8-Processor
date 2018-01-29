@@ -28,8 +28,8 @@ module adder_test;
     wire[`WORD - 1:0] out;
     
     adder UUT(
-        .Ain(in1),
-        .Bin(in2),
+        .a_in(in1),
+        .b_in(in2),
         .add_out(out)
         );
         

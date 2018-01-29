@@ -9,8 +9,8 @@ module mux_test;
     wire[`WORD-1:0] out;
     
 mux#(64) UUT(
-    .Ain(in1),
-    .Bin(in2),
+    .a_in(in1),
+    .b_in(in2),
     .control(con),
     .mux_out(out)
     );
