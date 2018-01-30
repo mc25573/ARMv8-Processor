@@ -10,7 +10,7 @@ module iFetch_test;
     wire [`INSTR_LEN-1:0] instr;
     wire [`WORD-1:0] c_pc;
       
-    
+oscillator clk_gen(clk);
     
 iFetch UUT(
     .clk(clk),
@@ -21,19 +21,15 @@ iFetch UUT(
     .instruction(instr),
     .cur_pc(c_pc)
     );
-    
-    oscillator clk_gen(clk);
- 
+     
  initial begin
- pc_s <= 0;
+ pc_s = 0;
  rst <= 0;
  #(4*`CYCLE);
- pc_s <= 1;
+ pc_s = 1;
  branch <= 4;
- #200;
- pc_s <=0;
- 
-
+ #(2*`CYCLE);
+ pc_s =0;
  
 end 
 endmodule
