@@ -5,12 +5,12 @@ module regfile_test;
     wire read_clk; 
     wire write_clk;
     reg regWrite;
-    reg read_reg1; //rn
-    reg read_reg2; //rm
-    reg write_reg; //rd
-    reg write_data;
-    wire read_data1;
-    wire read_data2;
+    reg [4:0] read_reg1; //rn
+    reg [4:0] read_reg2; //rm
+    reg [4:0] write_reg; //rd
+    reg [`WORD-1:0] write_data;
+    wire [`WORD-1:0] read_data_1;
+    wire [`WORD-1:0] read_data_2;
     
     oscillator clk_gen_read(write_clk);
     
@@ -24,20 +24,27 @@ module regfile_test;
         .read_reg2(read_reg2),
         .write_reg(write_reg),
         .write_data(write_data),
-        .read_data1(read_data1),
-        .read_data2(read_data2)
+        .read_data1(read_data_1),
+        .read_data2(read_data_2)
     );
     
 initial begin
 
 regWrite <= 1'b0;
-read_reg1 <= 10;//5'b01010;
-read_reg2 <= 15;//5'b01111;
+read_reg1 <= 10;
+read_reg2 <= 15;
+
+#(`CYCLE*6);
+
+regWrite <= 1'b1;
+write_reg = 5'b01001;
+write_data = 256;
 
 #(`CYCLE*2);
 
-write_reg = 5'b01001;
-write_data = 256;
+regWrite <= 1'b0;
+read_reg1 <= 2;
+read_reg2 <= 32;
 
 end
 

@@ -8,7 +8,6 @@ module instr_mem#(
     );
     
     reg[`INSTR_LEN - 1:0] imem [SIZE-1:0];
-    integer i;
     
     //handle output
     always @(posedge(clk))
