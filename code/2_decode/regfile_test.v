@@ -34,7 +34,7 @@ regWrite <= 1'b0;
 read_reg1 <= 10;
 read_reg2 <= 15;
 
-#(`CYCLE*6);
+#(`CYCLE*2);
 
 regWrite <= 1'b1;
 write_reg = 5'b01001;
