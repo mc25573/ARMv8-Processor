@@ -25,8 +25,8 @@
 \maketitle
 
 \section{Simplified Report}
-The instr\_parse module uses both R and D format to break down the instruction code. The module parsed the instruction bits successfully and it is verified using four instruction codes provided in class.
-The regfile module reads  data from the regData file into an array of registers. The module outputs............... When write\_data is HIGH data will be written to the registers. This action is verified through the simulation.
+The instr\_parse module uses both R and D format to break down instruction code. The module parses the instruction bits successfully and it is verified using four the instruction codes provided in class.
+The regfile module reads data from the regData file into an array of registers. The module releases the addressed data into the register array using non-blocking assignments and outputs the instruction into read\_data1 and read\_data2, based on the read\_reg indices. When write\_data input is HIGH, data will be written to a register in the array specified by the write\_reg index. This action is verified through the simulation. 
 
 \section{Code}
 \Verilog{Verilog code for implementing the instr\_parse module.}{code:adder}{../code/decode/instr_parse.v}
@@ -43,6 +43,12 @@ The regfile module reads  data from the regData file into an array of registers.
 
 \Verilog{Verilog code for implementing the regfile testbench.}{code:mux}{../code/decode/regfile_test.v}
 
+
+
+
+\section{Simulation}
+As seen from the simulation in Figure 2, the read\_data output registers equal the addresses given in the read\_reg inputs. This is simply because we altered the regData file to the values show in Figure 3.
+
 \begin{figure}[h]	
 	\caption{Timing diagram for instr\_parse module test.}
 	\includegraphics[width=\textwidth]{instr_parse_sim}
@@ -54,36 +60,10 @@ The regfile module reads  data from the regData file into an array of registers.
 	\includegraphics[width=\textwidth]{regfile_sim}
 	\label{fig:fetchtest}
 \end{figure}
-
-The regfile simulation is working on the positive edge and 
-
 \begin{figure}[h]	
 	\caption{Modified Register File Data.}
 	\includegraphics[width=\textwidth]{Modified_data}
 	\label{fig:fetchtest}
 \end{figure}
-
-\section{Simulation}
-
-\begin{figure}[h]	
-	\caption{Timing diagram for instr\_parse module test.}
-	\includegraphics[width=\textwidth]{instr_parse_sim}
-
-\end{figure}
-
-\begin{figure}[h]	
-	\caption{Timing diagram for regfile module test.}
-	\includegraphics[width=\textwidth]{regfile_sim}
-	\label{fig:fetchtest}
-\end{figure}
-
-The regfile simulation is working on the positive edge and 
-
-\begin{figure}[h]	
-	\caption{Modified Register File Data.}
-	\includegraphics[width=\textwidth]{Modified_data}
-	\label{fig:fetchtest}
-\end{figure}
-
-
+ 
 \end{document} 
