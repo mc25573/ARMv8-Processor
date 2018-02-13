@@ -118,6 +118,6 @@ module control(
                 alu_src<=0;
                 reg_write<=0;  
                end                                                                                              
-        endcase
-    end
+       endcase
+   end
 endmodule
