@@ -25,7 +25,6 @@ module regfile(
     end
      
     initial
-            $readmemb(`RMEMFILE, regs);
-            
+            $readmemb(`RMEMFILE, regs);            
     
 endmodule
