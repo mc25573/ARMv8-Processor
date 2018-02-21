@@ -32,8 +32,13 @@ module iFetch#(parameter STEP=`WORD'd4, SIZE=1024)(
     );
        
     instr_mem#(SIZE) instr_mem(
-    .clk(clk),
+    .clk(clk_plus_1),
     .pc(cur_pc),
     .instruction(instruction)
     );
+    
+    delay clk_delay_1(
+          .a(clk),
+          .a_delayed(clk_plus_1)
+    );   
 endmodule

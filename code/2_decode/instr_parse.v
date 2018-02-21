@@ -12,11 +12,11 @@ module instr_parse(
     );
     
     always @(posedge(clk))begin    
-            opcode <= instruction[31:21];                                 
-            address <= instruction[20:12];                               
-            rm_num <= instruction[20:16];                               
-            rn_num <= instruction[9:5];                                
-            rd_num <= instruction[4:0];             
+            opcode  = instruction[31:21];                                 
+            address = instruction[20:12];                               
+            rm_num  = instruction[20:16];                               
+            rn_num  = instruction[9:5];                                
+            rd_num  = instruction[4:0];             
     end      
     
 endmodule

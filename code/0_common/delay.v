@@ -5,9 +5,8 @@ module delay(
     input a,
     output reg a_delayed
     );
-    always@(*) begin
-       #1; 
-       a_delayed <= a;
+    always@(*) begin      
+       a_delayed <=  #1 a;
     end
     initial
         a_delayed<=a;

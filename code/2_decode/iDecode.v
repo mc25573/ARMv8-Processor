@@ -1,7 +1,7 @@
 `include "definitions.vh"
 
 module iDecode(
-    input clk,
+    input clk, read_clk, write_clk,
     input [`INSTR_LEN-1:0] instr,
     input [`WORD-1:0] write_data,        
     output [`WORD-1:0] read_data1,
@@ -66,8 +66,8 @@ module iDecode(
        );
        
    regfile regf(
-       .read_clk(clk),
-       .write_clk(clk),
+       .read_clk(read_clk),
+       .write_clk(write_clk),
        .regWrite(reg_write),
        .read_reg1(rn),
        .read_reg2(read_reg2),
