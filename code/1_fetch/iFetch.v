@@ -10,7 +10,12 @@ module iFetch#(parameter STEP=`WORD'd4, SIZE=1024)(
     output[`WORD-1:0] cur_pc
     );
     wire [`WORD-1:0] new_pc;
-
+    
+    delay clk_delay_1(
+            .a(clk),
+            .a_delayed(clk_plus_1)
+        );   
+        
     mux#(`WORD) pc_mux(
     .a_in(incremented_pc),
     .b_in(branch_target),
@@ -37,8 +42,5 @@ module iFetch#(parameter STEP=`WORD'd4, SIZE=1024)(
     .instruction(instruction)
     );
     
-    delay clk_delay_1(
-          .a(clk),
-          .a_delayed(clk_plus_1)
-    );   
+    
 endmodule

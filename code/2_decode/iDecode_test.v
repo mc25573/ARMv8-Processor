@@ -136,7 +136,7 @@ initial begin
     #(`CYCLE/2);
     write_data <= 30;
             
-    #(`CYCLE*2);
+    #(`CYCLE/2);
     instr <= 64'h8A0A02C9; //10
     #(`CYCLE/2);
     write_data <= 14; 
