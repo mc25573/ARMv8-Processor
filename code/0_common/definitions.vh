@@ -18,3 +18,9 @@
 `define ALUOp_DTYPE  2'b00
 `define ALUOp_RTYPE  2'b10
 `define ALUOp_BRANCH 2'b01
+
+`define alu_add 4'b0010
+`define alu_cbz 4'b0111
+`define alu_and 4'b0000
+`define alu_orr 4'b0001
+`define alu_sub 4'b0110
