@@ -9,7 +9,6 @@ module shifter(
     
    always @(*)begin
       result <= offset << 2;     
-   end
-   
+   end   
    
 endmodule

@@ -20,6 +20,9 @@ module datapath;
    wire alu_src;    
    wire [`WORD-1:0] ext_addr;    
    wire [`INSTR_LEN-1:0] instruct;
+   wire [`WORD-1:0] execute_branch_target;
+   wire [`WORD-1:0] alu_result;
+   wire zero;
    
     oscillator clk_gen(clk);
     
@@ -51,6 +54,19 @@ module datapath;
     .ext_addr(ext_addr)
     );
     
+    iExecute Breana(
+      .pc_in(cur_pc),
+      .read_data1(read_data1),
+      .read_data2(read_data2),
+      .sign_extended_output(ext_addr),
+      .branch_target(execute_branch_target),
+      .alu_result(alu_result),
+      .zero(zero),    
+      .alu_op(alu_op), 
+      .opcode(instruct[31:21]),
+      .alu_src(alu_src)
+     );
+        
     delay clk_delay_1(
         .a(clk),
         .a_delayed(clk_plus_1)
