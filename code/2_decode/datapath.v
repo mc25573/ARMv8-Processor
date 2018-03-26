@@ -54,7 +54,7 @@ module datapath;
     .ext_addr(ext_addr)
     );
     
-    iExecute Breana(
+    iExecute execute(
       .pc_in(cur_pc),
       .read_data1(read_data1),
       .read_data2(read_data2),
