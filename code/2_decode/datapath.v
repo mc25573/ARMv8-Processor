@@ -23,6 +23,9 @@ module datapath;
    wire [`WORD-1:0] execute_branch_target;
    wire [`WORD-1:0] alu_result;
    wire zero;
+   wire read_data;
+   wire write_back;
+   wire branch_decision;
    
     oscillator clk_gen(clk);
     
@@ -66,7 +69,27 @@ module datapath;
       .opcode(instruct[31:21]),
       .alu_src(alu_src)
      );
+      
+     iMemory memory( 
+      .mem_read(mem_read), 
+      .mem_write(mem_write), 
+      .zero(zero), 
+      .branch(branch), 
+      .uncond_branch(uncondbranch),
+      .clk(clk_plus_7),
+      .alu_result(alu_result), 
+      .read_data2(read_data2),
+      .or_result(branch_decision),
+      .read_data(read_data) 
+      );
         
+     iWrite_Back writeback(
+      .read_data_mem(write_data),
+      .alu_result(alu_result),
+      .mem_to_reg(mem_to_reg),
+      .result(write_back)
+      );
+      
     delay clk_delay_1(
         .a(clk),
         .a_delayed(clk_plus_1)
@@ -111,7 +134,7 @@ initial
             branch_target <= 0; 
             #(`CYCLE/2);
             rst <= 0;       
-            write_data <= `WORD'd20; 
+           /* write_data <= `WORD'd20; 
             #(`CYCLE);
             write_data <= `WORD'd30; // Addition result 
             #(`CYCLE);
@@ -130,7 +153,7 @@ initial
             write_data <= `WORD'd30; // ORR result 
             #(`CYCLE);
             write_data <= `WORD'd14; // Writing                 
-     
+           */
         end
             
 endmodule
