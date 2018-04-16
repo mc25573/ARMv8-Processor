@@ -21,6 +21,7 @@ module iMemory_test;
         .or_result(or_result),
         .read_data(read_data)
         );
+               
     
     initial begin
         #(`CYCLE/2)

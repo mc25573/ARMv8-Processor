@@ -10,15 +10,13 @@ parameter SIZE=1024)(
     reg[`WORD - 1:0] dmem [SIZE-1:0];
         
         //handle output
-         always @(posedge(clk))   
-            if(mem_read==1) begin            
+         always @(posedge(clk))begin 
+            if(mem_read==1'b1)            
                 read_data <= dmem[address];     
-            end
-            
-        always @(posedge(clk))    
-            if(mem_write==1) begin           
+           
+            if(mem_write==1'b1)           
                 dmem[address] <= write_data;          
-            end
+         end                     
             
         //initialize memory from file
         initial
